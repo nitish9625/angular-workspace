@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-white text-dark">
+  <div class="container-fluid">
+    <a class="nav-link text-dark p-0" href="javascript:void(0)" (click)="toggleSidebar()">
+      Toggle
+    </a>
+    <span class="fs-3 d-none d-sm-inline"><strong>Nitish</strong></span>
+    <div ngbDropdown placement="bottom-right">
+      <button class="btn btn-link text-capitalize" id="profileDropdown" ngbDropdownToggle>Hello Nitish</button>
+      <div ngbDropdownMenu aria-labelledby="profileDropdown" class="end-0">
+        <button ngbDropdownItem >Logout</button>
+      </div>
+    </div>
+  </div>
+</nav>

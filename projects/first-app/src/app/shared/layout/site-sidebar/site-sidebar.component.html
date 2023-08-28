@@ -1,0 +1,24 @@
+<nav id="sidebar" [class]="{'active': isSidebarOpen}">
+    <div class="sidebar-header">
+        <h3>
+            <img class="img-fluid" src="assets/images/logo.png" alt="image" />
+            <span>Company</span>
+        </h3>
+    </div>
+    <ul class="list-unstyled components">
+      <li [class.active]="homeLink.isActive">
+        <a routerLink="/" routerLinkActive="active" #homeLink="routerLinkActive" [routerLinkActiveOptions]="{exact:true}">Home</a>
+      </li>
+      <li routerLinkActive="active" >
+        <a (click)="sampleTypeCollapse.toggle()" role="button" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapsed">Sample Page</a>
+        <ul #sampleTypeCollapse="ngbCollapse" [(ngbCollapse)]="isClosed.sampleTypes" class="collapse list-unstyled" routerLinkActive="show">
+            <li [class.active]="sampleFirstPageLink.isActive">
+                <a routerLink="/first-sample" routerLinkActive="active" #sampleFirstPageLink="routerLinkActive">First Page</a>
+            </li>
+            <li [class.active]="sampleSecondPageLink.isActive">
+                <a routerLink="/asset_types/add" routerLinkActive="active"  #sampleSecondPageLink="routerLinkActive">Second Page</a>
+            </li>
+        </ul>
+    </li>
+    </ul>
+</nav>
